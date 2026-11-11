@@ -1,0 +1,18 @@
+{
+  "name": "agent-site-atlas",
+  "version": "0.1.0",
+  "description": "Portable website operation manuals for AI agents, with selective skill installation and a local MCP server.",
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=22" },
+  "bin": { "site-atlas": "bin/site-atlas.js" },
+  "files": ["bin", "src", "skills", "README.md", "README.en.md", "LICENSE", "docs"],
+  "scripts": {
+    "test": "node --test test/atlas.test.js test/mcp.test.js",
+    "start": "node bin/site-atlas.js serve"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "zod": "4.6.7"
+  }
+}

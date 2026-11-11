@@ -1,0 +1,15 @@
+{
+  "id": "cnki",
+  "name": "中国知网 / CNKI",
+  "description": "CNKI mainland academic search, advanced query fields and full-text access / 知网学术检索与下载",
+  "entry_url": "https://www.cnki.net/",
+  "domains": ["cnki.net", "www.cnki.net", "kns.cnki.net", "navi.cnki.net", "bar.cnki.net", "oversea.cnki.net"],
+  "aliases": ["CNKI", "知网", "中国知网", "KNS"],
+  "context": "references/site.md",
+  "workflows": [
+    {"id":"search","title":"Find papers / 论文检索","description":"Choose the CNKI search field and identify a matching paper using the current mainland interface.","keywords":["search","find","paper","title","author","检索","搜索","查找","找论文","篇名","题名","作者"],"file":"references/search.md","evidence":"live-partial","last_checked":"2026-11-04"},
+    {"id":"advanced","title":"Advanced search and filters / 高级检索与筛选","description":"Combine subject, author, source, date and OA conditions in the observed advanced form.","keywords":["advanced","filter","year","date","journal","OA","author","title","高级检索","筛选","年份","日期","来源","期刊","主题","组合","作者","篇名","开放获取"],"file":"references/advanced.md","evidence":"live-partial","last_checked":"2026-11-04"},
+    {"id":"download","title":"Identify and download full text / 全文下载","description":"Verify a CNKI record and choose its available full-text format, preserving login and CAPTCHA boundaries.","keywords":["download","PDF","CAJ","full text","access","下载","全文","阅读","获取","权限"],"file":"references/download.md","evidence":"live-partial","last_checked":"2026-11-04"},
+    {"id":"cite","title":"Export citations / 题录与引文导出","description":"Use the current citation/export controls, guided by the official KNS 8.0 manual; verify formats and selected records.","keywords":["cite","citation","export","RIS","BibTeX","EndNote","引用","引文","题录","导出","参考文献","格式"],"file":"references/cite.md","evidence":"documented","last_checked":"2026-11-04"}
+  ]
+}

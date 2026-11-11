@@ -1,0 +1,14 @@
+{
+  "id": "sciencedirect",
+  "name": "ScienceDirect / Elsevier",
+  "description": "ScienceDirect paper search, filters, full-text access and citation export / 爱思唯尔论文操作",
+  "entry_url": "https://www.sciencedirect.com/",
+  "domains": ["sciencedirect.com", "www.sciencedirect.com", "pdf.sciencedirectassets.com"],
+  "aliases": ["ScienceDirect", "Science Direct", "Elsevier", "爱思唯尔", "爱思维尔"],
+  "context": "references/site.md",
+  "workflows": [
+    {"id":"search","title":"Search and refine papers / 检索与筛选","description":"Find papers by keywords, title or DOI and apply year, article type, journal and access filters.","keywords":["search","find","paper","title","DOI","author","journal","year","filter","advanced","检索","搜索","查找","论文","筛选","年份","高级检索","期刊","作者"],"file":"references/search.md","evidence":"live-verified","last_checked":"2026-11-04"},
+    {"id":"download","title":"Identify and download full text / 全文下载","description":"Verify article identity, use the official PDF control and handle institutional access or CAPTCHA states.","keywords":["download","PDF","full text","open access","access","下载","全文","获取","权限","开放获取"],"file":"references/download.md","evidence":"live-partial","last_checked":"2026-11-04"},
+    {"id":"cite","title":"Export citations / 引文导出","description":"Use article Cite or result Export for RIS, BibTeX and text; distinguish local files from reference-manager imports.","keywords":["cite","citation","export","RIS","BibTeX","reference","引用","引文","导出","参考文献","格式"],"file":"references/cite.md","evidence":"live-partial","last_checked":"2026-11-04"}
+  ]
+}
