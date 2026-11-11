@@ -1,0 +1,14 @@
+{
+  "id": "jd",
+  "name": "京东 / JD.com",
+  "description": "Product search, exact variants, conditional prices, reviews and Q&A / 京东商品检索、规格价格与评价研究",
+  "entry_url": "https://www.jd.com/",
+  "domains": ["www.jd.com", "search.jd.com", "item.jd.com"],
+  "aliases": ["京东", "JD", "JD.com", "Jingdong", "京东商城"],
+  "context": "references/site.md",
+  "workflows": [
+    {"id":"search","title":"Search and filter products / 商品搜索与筛选","description":"Search from the homepage, apply price and self-operated seller filters, and verify candidates in detail.","keywords":["search","find","filter","price range","搜索","检索","筛选","价格区间","自营","旗舰店","找商品"],"file":"references/search.md","evidence":"live-verified","last_checked":"2026-11-11"},
+    {"id":"product","title":"Read variants and prices / 规格、价格与参数","description":"Identify the selected item, verify model changes and price conditions, and read the parameter preview.","keywords":["product","variant","sku","price","specification","商品","规格","型号","价格","补贴","比价","参数","配送","售后"],"file":"references/product.md","evidence":"live-verified","last_checked":"2026-11-11"},
+    {"id":"reviews","title":"Read reviews and Q&A / 评价与问大家","description":"Filter reviews to the current variant and latest negative reviews, load additional batches and expand question answers.","keywords":["review","comments","questions","answers","评价","评论","差评","追评","最新","问大家","问答","回答","口碑"],"file":"references/reviews.md","evidence":"live-verified","last_checked":"2026-11-11"}
+  ]
+}
