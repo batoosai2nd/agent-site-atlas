@@ -2,9 +2,31 @@
 
 Portable website operating knowledge for AI agents. Read a relevant, evidence-labeled workflow before exploring the same interface again.
 
-[中文](README.md) · [Integrations](docs/integrations.md) · [Validation](docs/validation.md) · [Contributing](CONTRIBUTING.md)
+[中文](README.md) · [Installation prompt](#install-with-a-prompt) · [Integrations](docs/integrations.md) · [Validation](docs/validation.md) · [Contributing](CONTRIBUTING.md)
 
 The packs cover **CNKI**, **ScienceDirect**, **Xiaohongshu / REDnote**, **Xiaoheihe / HeyBox**, and **JD.com**, plus a **site-study** skill for learning new websites. Each pack is a self-contained Agent Skill. A small CLI and optional local MCP server retrieve the same files. Execution stays with the agent's existing browser tools and the user's own account.
+
+## Install with a prompt
+
+Paste the entire prompt into an agent on the other device that has network and local file access. The agent can install for its current client; if a manual import is required, it should prepare the files and explain the remaining action.
+
+```text
+Install Agent Site Atlas on this device:
+https://github.com/batoosai2nd/agent-site-atlas
+
+Scope: all website knowledge packs currently on the repository's main branch, plus site-study for learning new websites.
+
+1. Read README.md and docs/integrations.md first. Identify the current agent client and operating system. Use that client's user-level skill location so future sessions can use the packs. Ask me only if the client or skill directory cannot be determined.
+2. Retrieve the complete selected skills/site-* directories, preserving SKILL.md, site.json, LICENSE, references and other pack files. Follow the integration guide using the repository installer, the host's existing skill installer, or complete folder copies. Folder copying does not require Node.js. Use the Skill integration for this request.
+3. Install for the current client only. Compare existing same-name skills: skip identical copies, preserve and report differing copies, and continue installing other missing packs. Preserve existing configuration and personal edits.
+4. For WorkBuddy, prepare and import one complete skill ZIP per pack following the integration guide. If you cannot operate its import UI, provide the actual ZIP paths and remaining steps, marked as awaiting import.
+5. Check each installed pack's SKILL.md and internal references, and actually read at least one installed workflow guide. If the host's skill list is available, also confirm discovery. Distinguish files installed, host discovery confirmed, and awaiting import.
+6. Report installed, skipped or pending skills with actual paths and verification results. State whether a new session or client restart is needed, and give one explicit skill-use example. Perform the installation rather than only giving me commands.
+```
+
+For selective installation, replace the scope with, for example: `Only CNKI, ScienceDirect and JD.com; omit site-study.` Current website IDs are `cnki`, `sciencedirect`, `xiaohongshu`, `xiaoheihe`, and `jd`; the study skill's installer ID is `study`.
+
+Then try in a fresh session: "Use site-jd to find a wired keyboard on JD.com, checking the exact variant, price conditions and latest reviews for the current item." Use that device's own browser connection and login. See [Integrations](docs/integrations.md#确认接入结果) for the actual host-validation scope.
 
 ## Quick start
 

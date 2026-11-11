@@ -2,11 +2,33 @@
 
 **让 agent 在操作网站之前，先读到别人已经验证过的经验。**
 
-[English](README.en.md) · [接入方式](docs/integrations.md) · [验证范围](docs/validation.md) · [贡献指南](CONTRIBUTING.md)
+[English](README.en.md) · [安装提示词](#一键安装提示词) · [接入方式](docs/integrations.md) · [验证范围](docs/validation.md) · [贡献指南](CONTRIBUTING.md)
 
 Agent Site Atlas 是一个可选择安装、可跨会话复用的网站操作知识库。每个网站包保存任务入口、页面控件、条件分支和完成标准；agent 结合当前网页执行。当前包含 **中国知网（CNKI）**、**ScienceDirect（Elsevier）**、**小红书（Xiaohongshu）**、**小黑盒（Xiaoheihe）** 和 **京东（JD.com）**，另附一个用于研究新网站的 Skill。
 
 可以直接安装 Skill，也可以通过 CLI 或本地 MCP 按网站和任务取用知识。已有浏览器工具负责点击、填写和下载；账号与访问权限保留在用户自己的浏览器中。
+
+## 一键安装提示词
+
+在另一台设备上，把下面整段复制给具有联网和本地文件操作能力的 agent。它会按当前客户端完成安装；如果某一步必须在界面手动导入，会交付所需文件并说明剩余操作。
+
+```text
+请直接在这台设备上安装 Agent Site Atlas：
+https://github.com/batoosai2nd/agent-site-atlas
+
+安装范围：仓库 main 分支中当前所有网站知识包，以及研究新网站用的 site-study。
+
+1. 先读取仓库 README.md 和 docs/integrations.md，识别当前 agent 客户端及操作系统。默认采用当前客户端的用户级安装位置，让后续会话也能使用；如果无法确定客户端或技能目录，再向我询问。
+2. 获取所选 skills/site-* 的完整目录，保留 SKILL.md、site.json、LICENSE 和 references 等包内文件。按接入文档使用仓库安装器、宿主已有的技能安装工具或完整目录复制。仅复制 Skill 不需要 Node.js；本次采用 Skill 接入。
+3. 只为当前客户端安装。已有同名技能先比较：内容相同则跳过，有差异则保留原文件并报告，继续安装其他缺失包。保留现有配置及个人修改。
+4. 如果当前客户端是 WorkBuddy，按接入文档逐个制作完整技能 ZIP 并导入；若无法操作导入界面，给我 ZIP 的实际路径和剩余步骤，将状态标为“待导入”。
+5. 安装后检查每个包的 SKILL.md 和包内引用，实际读取至少一份已安装的流程指南。能查看宿主技能列表时，再确认技能已被发现；区分“文件已安装”“宿主已识别”和“待导入”。
+6. 最后列出已安装、跳过或待处理的技能及实际路径、验证结果，并告诉我是否需要新建会话或重启客户端，以及一条明确调用技能的示例。请执行安装，不要只给我命令。
+```
+
+只需要部分网站时，将提示词中的“安装范围”改为例如：`仅安装知网、ScienceDirect 和京东，不安装 site-study`。当前网站 ID 为 `cnki`、`sciencedirect`、`xiaohongshu`、`xiaoheihe`、`jd`；研究技能的安装器 ID 为 `study`。
+
+安装后可在新会话中说：“使用 site-jd，在京东找有线键盘，核对规格、优惠条件和当前商品的最新评论。”浏览器连接和网站登录仍使用该设备自己的环境。各宿主的已验证范围见[接入文档](docs/integrations.md#确认接入结果)。
 
 ## 快速开始
 
