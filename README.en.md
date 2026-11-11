@@ -4,7 +4,7 @@ Portable website operating knowledge for AI agents. Read a relevant, evidence-la
 
 [中文](README.md) · [Integrations](docs/integrations.md) · [Validation](docs/validation.md) · [Contributing](CONTRIBUTING.md)
 
-The initial packs cover **CNKI** and **ScienceDirect**, plus a **site-study** skill for learning new websites. Each pack is a self-contained Agent Skill. A small CLI and optional local MCP server retrieve the same files. Execution stays with the agent's existing browser tools and the user's own account.
+The packs cover **CNKI**, **ScienceDirect**, **Xiaohongshu / REDnote**, and **Xiaoheihe / HeyBox**, plus a **site-study** skill for learning new websites. Each pack is a self-contained Agent Skill. A small CLI and optional local MCP server retrieve the same files. Execution stays with the agent's existing browser tools and the user's own account.
 
 ## Quick start
 
@@ -15,6 +15,8 @@ node bin/site-atlas.js list
 node bin/site-atlas.js search --url "https://www.sciencedirect.com/" --task "download PDF"
 node bin/site-atlas.js read sciencedirect download
 node bin/site-atlas.js install cnki sciencedirect --agent codex
+node bin/site-atlas.js install xiaohongshu --agent codex
+node bin/site-atlas.js install xiaoheihe --agent codex
 ```
 
 Supported installer targets: `codex`, `claude`, `deepseek`, or an explicit absolute `--dest` skill directory. Only requested skills are copied; existing targets cause the installation to stop before copying. You can also copy a complete folder from `skills/` manually, with no Node.js dependency.
@@ -35,6 +37,8 @@ The stdio server exposes `list_sites`, `find_site_workflows`, and `read_site_wor
 - **CNKI:** homepage, advanced navigation/form and download entries observed. CAPTCHA prevented a completed result/download run.
 - **ScienceDirect:** keyword search, year range and open-access filtering completed. Article identity/full HTML and citation choices observed. PDF delivery reached a CAPTCHA; citation export was intercepted by a reference-manager extension, so no local file was confirmed.
 - **site-study:** a repeatable authoring procedure with the pack contract and optional REA investigation guidance.
+- **Xiaohongshu:** two search layouts, conventional-page image selection, note overlays, image navigation, comment loading/reply and long-text expansion, and public-profile navigation exercised. Advanced sorting/date filters and full video understanding remain unverified.
+- **Xiaoheihe:** content search, Steam community navigation, image-text posts, gallery navigation/long-image scrolling, root-comment loading, reply batches and public profiles exercised. Game details/prices, transactions, video and publishing remain unverified.
 
 `live-verified` means a representative task reached its stated outcome; `live-partial` means only part of the flow was completed; `documented` means the procedure relies on linked documentation. Read the specific branch coverage and date. No universal browser compatibility or measured speedup is claimed. See [Validation](docs/validation.md).
 

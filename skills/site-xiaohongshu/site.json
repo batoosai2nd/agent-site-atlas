@@ -1,0 +1,15 @@
+{
+  "id": "xiaohongshu",
+  "name": "小红书 / Xiaohongshu / REDnote",
+  "description": "Search notes, read text and images, expand comments and inspect public profiles / 小红书检索、图文与评论读取",
+  "entry_url": "https://www.xiaohongshu.com/explore",
+  "domains": ["xiaohongshu.com", "www.xiaohongshu.com"],
+  "aliases": ["小红书", "Xiaohongshu", "REDnote", "小红书攻略"],
+  "context": "references/site.md",
+  "workflows": [
+    {"id":"search","title":"Search notes / 笔记搜索","description":"Use the current search layout, distinguish AI summaries, switch content type and collect note candidates.","keywords":["search","find","filter","type","搜索","检索","筛选","图文","攻略","资料","笔记"],"file":"references/search.md","evidence":"live-verified","last_checked":"2026-11-11"},
+    {"id":"note","title":"Read note text and images / 阅读笔记图文","description":"Open the detail overlay, identify title and author, read text, navigate image pages and recognize video coverage limits.","keywords":["read","note","image","video","detail","正文","阅读","图片","图文","视频","详情","笔记"],"file":"references/note.md","evidence":"live-verified","last_checked":"2026-11-11"},
+    {"id":"comments","title":"Read comments and replies / 评论与楼中楼","description":"Load comment batches, expand reply groups and long comments, and report the observed completion boundary.","keywords":["comments","replies","all comments","expand","评论","全部评论","楼中楼","回复","展开"],"file":"references/comments.md","evidence":"live-verified","last_checked":"2026-11-11"},
+    {"id":"users","title":"Find public profiles / 用户与博主查找","description":"Switch to user results, open a public profile and identify its public notes without following or messaging.","keywords":["user","profile","author","creator","用户","博主","作者","主页","账号","官方"],"file":"references/users.md","evidence":"live-verified","last_checked":"2026-11-11"}
+  ]
+}

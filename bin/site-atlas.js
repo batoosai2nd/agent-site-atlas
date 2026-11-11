@@ -13,7 +13,7 @@ Usage:
   node bin/site-atlas.js install SITE... --dest ABSOLUTE_DIRECTORY
   node bin/site-atlas.js serve [--sites cnki,sciencedirect]
 
-Install accepts cnki, sciencedirect, and study. Existing destinations are
+Install accepts a site ID returned by list, plus study. Existing destinations are
 preserved and cause installation to stop before copying. --dest also supports
 hosts with a custom skill directory. list/search/install return JSON.
 

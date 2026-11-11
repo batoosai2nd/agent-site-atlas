@@ -1,0 +1,16 @@
+{
+  "id": "xiaoheihe",
+  "name": "小黑盒 / Xiaoheihe / HeyBox",
+  "description": "Search community posts, read text and images, expand comments and inspect public profiles / 小黑盒社区检索、图文与评论读取",
+  "entry_url": "https://www.xiaoheihe.cn/app/bbs/home",
+  "domains": ["www.xiaoheihe.cn"],
+  "aliases": ["小黑盒", "Xiaoheihe", "HeyBox", "小黑盒社区"],
+  "context": "references/site.md",
+  "workflows": [
+    {"id":"search","title":"Search posts / 帖子搜索","description":"Search from the community homepage, choose content results and identify post candidates.","keywords":["search","find","搜索","检索","攻略","帖子","内容","资料"],"file":"references/search.md","evidence":"live-verified","last_checked":"2026-11-11"},
+    {"id":"community","title":"Browse communities / 浏览社区","description":"Enter a named community and inspect its current tabs and available ordering.","keywords":["community","topic","browse","sort","社区","话题","浏览","分类","排序","Steam"],"file":"references/community.md","evidence":"live-verified","last_checked":"2026-11-11"},
+    {"id":"post","title":"Read post text and images / 阅读帖子图文","description":"Read the detail page, navigate its image gallery and scroll a long image in the viewer.","keywords":["read","post","image","gallery","detail","正文","阅读","图片","长图","图文","详情","帖子"],"file":"references/post.md","evidence":"live-verified","last_checked":"2026-11-11"},
+    {"id":"comments","title":"Read comments and replies / 评论与楼中楼","description":"Load main comments and reply batches, preserve parent attribution and check completion signals.","keywords":["comments","replies","all comments","expand","评论","全部评论","楼中楼","回复","展开"],"file":"references/comments.md","evidence":"live-verified","last_checked":"2026-11-11"},
+    {"id":"users","title":"Read public author profiles / 公开作者主页","description":"Follow an observed author link to a public profile and identify its visible posts.","keywords":["user","profile","author","creator","用户","作者","博主","主页","账号"],"file":"references/users.md","evidence":"live-verified","last_checked":"2026-11-11"}
+  ]
+}

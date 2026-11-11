@@ -4,7 +4,7 @@
 
 [English](README.en.md) · [接入方式](docs/integrations.md) · [验证范围](docs/validation.md) · [贡献指南](CONTRIBUTING.md)
 
-Agent Site Atlas 是一个可选择安装、可跨会话复用的网站操作知识库。每个网站包保存任务入口、页面控件、条件分支和完成标准；agent 结合当前网页执行。第一版包含 **中国知网（CNKI）** 和 **ScienceDirect（Elsevier）**，另附一个用于研究新网站的 Skill。
+Agent Site Atlas 是一个可选择安装、可跨会话复用的网站操作知识库。每个网站包保存任务入口、页面控件、条件分支和完成标准；agent 结合当前网页执行。当前包含 **中国知网（CNKI）**、**ScienceDirect（Elsevier）**、**小红书（Xiaohongshu）** 和 **小黑盒（Xiaoheihe）**，另附一个用于研究新网站的 Skill。
 
 可以直接安装 Skill，也可以通过 CLI 或本地 MCP 按网站和任务取用知识。已有浏览器工具负责点击、填写和下载；账号与访问权限保留在用户自己的浏览器中。
 
@@ -23,6 +23,8 @@ node bin/site-atlas.js read sciencedirect download
 ```sh
 node bin/site-atlas.js install cnki sciencedirect --agent codex
 node bin/site-atlas.js install sciencedirect --agent claude
+node bin/site-atlas.js install xiaohongshu --agent codex
+node bin/site-atlas.js install xiaoheihe --agent codex
 node bin/site-atlas.js install cnki --agent deepseek
 ```
 
@@ -46,6 +48,8 @@ Skill 的名称和描述供 agent 自动选择；是否自动触发取决于宿�
 | --- | --- | --- |
 | `site-cnki` | 检索、高级字段组合、全文获取、引文导出 | 首页、跳转、高级表单及下载入口已观察；检索结果与文件下载受验证码/访问条件限制；引文流程依据官方手册 |
 | `site-sciencedirect` | 搜索筛选、论文详情/PDF、引文导出 | 关键词、年份及开放获取筛选已跑通；论文详情与导出菜单已观察；PDF 遇验证码，引文被浏览器扩展接管 |
+| `site-xiaohongshu` | 笔记搜索、图文阅读、评论展开、公开用户主页 | 两套搜索界面、图文类型切换、详情浮层、图集翻页、评论加载/展开及公开主页已实测；高级排序/日期筛选与完整视频读取未验证 |
+| `site-xiaoheihe` | 内容搜索、社区导航、帖子图文、评论与公开作者主页 | 搜索类型切换、Steam 社区、图集翻页/长图滚动、主评论加载/回复分批展开及公开主页已实测；游戏详情/价格、交易、视频与发布未验证 |
 | `site-study` | 将新网站的操作经验整理为同样的知识包 | 提供研究步骤、内容格式和可选 REA 调查流程 |
 
 每条流程带有 `last_checked` 和 `evidence`：`live-verified` 表示代表性任务完成，`live-partial` 表示仅部分步骤完成，`documented` 表示来自官方文档。具体分支以包内验证说明为准。第一版不声称所有账号、界面和下载路径均已跑通，也没有跨模型提速倍数的测量结果。
