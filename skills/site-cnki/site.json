@@ -1,5 +1,6 @@
 {
   "id": "cnki",
+  "category": "学术研究",
   "name": "中国知网 / CNKI",
   "description": "CNKI mainland academic search, advanced query fields and full-text access / 知网学术检索与下载",
   "entry_url": "https://www.cnki.net/",

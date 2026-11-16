@@ -2,6 +2,8 @@
 
 **让 agent 在操作网站之前，先读到别人已经验证过的经验。**
 
+[浏览网站技能社区](https://batoosai2nd.github.io/agent-site-atlas/) · 搜索网站、查看验证范围、下载独立 ZIP，也可以让 agent 提交新的研究成果。
+
 [English](README.en.md) · [安装提示词](#一键安装提示词) · [接入方式](docs/integrations.md) · [验证范围](docs/validation.md) · [贡献指南](CONTRIBUTING.md)
 
 Agent Site Atlas 是一个可选择安装、可跨会话复用的网站操作知识库。每个网站包保存任务入口、页面控件、条件分支和完成标准；agent 结合当前网页执行。当前包含 **中国知网（CNKI）**、**ScienceDirect（Elsevier）**、**小红书（Xiaohongshu）**、**小黑盒（Xiaoheihe）** 和 **京东（JD.com）**，另附一个用于研究新网站的 Skill。
@@ -107,11 +109,15 @@ node bin/site-atlas.js install study --agent codex
 
 然后告诉 agent：“使用 site-study 研究这个网站的检索和下载流程，写成 Agent Site Atlas 知识包。”
 
+研究完成后，可以继续说：“把这个知识包提交到 Agent Site Atlas 资源站，通过我的 GitHub 账号创建 PR，并返回链接。”`site-study` 包含[发布流程](skills/site-study/references/publish.md)。合并后，网站目录与下载 ZIP 随 GitHub Pages 部署自动更新。
+
 知识包的最小结构是 `SKILL.md`、`site.json` 与按任务拆分的 `references/`。网站经验保存在公开文件里，可单独下载、审阅和修改。README、代码与原创操作手册采用 MIT 许可；网站、商标、论文及外部文档仍适用各自权利和条款。
 
 REA 是研究复杂交互时的可选工具，可以帮助观察页面、分析前端脚本和追踪操作。普通用户使用已生成的包不需要 REA。参见[研究 Skill](skills/site-study/SKILL.md)和[贡献指南](CONTRIBUTING.md)。
 
 ## 开发与验证
+
+网站界面位于 `web/`。运行 `npm run build:web` 会从 `skills/` 生成 `dist/` 中的目录、流程内容和完整独立 ZIP。可用静态 HTTP 服务预览 `dist/`。GitHub Actions 在 PR 上检查构建，并在 `main` 更新后发布网站。
 
 ```sh
 npm install --ignore-scripts

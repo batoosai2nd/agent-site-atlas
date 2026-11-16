@@ -20,6 +20,7 @@ Use only the workflow files the website needs. `SKILL.md` has Agent Skills front
 | --- | --- |
 | `id` | Lowercase letters/digits separated by hyphens; matches the folder suffix |
 | `name`, `description` | Human-readable site and scope |
+| `category` | Optional short category displayed in the public catalog, such as `学术研究`, `社区内容` or `电商购物`. An omitted category appears as `其他网站`. |
 | `entry_url` | Public HTTP(S) entry point, without credentials or session parameters |
 | `domains` | Exact lowercase hostnames, including each supported `www`/subdomain explicitly |
 | `aliases` | Site names people actually use, including useful language variants |

@@ -1,5 +1,6 @@
 {
   "id": "sciencedirect",
+  "category": "学术研究",
   "name": "ScienceDirect / Elsevier",
   "description": "ScienceDirect paper search, filters, full-text access and citation export / 爱思唯尔论文操作",
   "entry_url": "https://www.sciencedirect.com/",

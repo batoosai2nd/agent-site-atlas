@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="社区共享的网站操作技能。发现已经研究过的网站，下载独立 Skill，让你的 Agent 复用操作经验。">
+    <meta name="theme-color" content="#f8faf8">
+    <title>Agent Site Atlas · 网站技能社区</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#catalog">跳转到技能目录</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="./" aria-label="Agent Site Atlas 首页">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span>atlas<span class="brand-dot">.</span></span>
+          <span class="brand-description">网站技能社区</span>
+        </a>
+        <nav aria-label="主导航">
+          <a class="nav-active" href="#catalog">探索技能</a>
+          <a href="https://github.com/batoosai2nd/agent-site-atlas/blob/main/docs/integrations.md" target="_blank" rel="noopener noreferrer">使用指南 <span aria-hidden="true">↗</span></a>
+          <a class="github-link" href="https://github.com/batoosai2nd/agent-site-atlas" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          <button class="button button-dark" data-contribute>贡献技能 <span aria-hidden="true">＋</span></button>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <h1 id="hero-title">发现网站技能，<br><span>复用社区的操作经验。</span></h1>
+          <p class="hero-description">从论文检索到商品研究，找到已经探索过的网站。<br class="desktop-break">把操作指南交给你的 Agent，开始下一项任务。</p>
+          <form class="search-form" role="search">
+            <span class="search-icon" aria-hidden="true"></span>
+            <input id="search" type="search" aria-label="搜索网站、域名或任务" placeholder="搜索网站、域名或任务，例如「论文下载」" autocomplete="off">
+            <kbd aria-hidden="true">/</kbd>
+          </form>
+          <div class="search-examples" aria-label="搜索示例">
+            <span>试试</span>
+            <button data-query="知网">知网</button>
+            <button data-query="评论">评论读取</button>
+            <button data-query="价格">商品比价</button>
+          </div>
+        </div>
+        <aside class="hero-note" aria-label="知识包使用方式">
+          <div class="note-heading"><span class="status-dot"></span> 一份技能，跨会话复用</div>
+          <div class="note-code"><span class="code-label">你的下一条指令</span><p>使用 <strong>site-jd</strong>，帮我找一款<br>适合办公的无线鼠标。</p></div>
+          <div class="note-step"><span class="step-check">✓</span><span>先读取网站操作指南</span></div>
+          <div class="note-step"><span class="step-check">✓</span><span>再结合当前页面完成任务</span></div>
+          <div class="note-footer">Codex · Claude Code · DeepSeek Harness · WorkBuddy<span>接入方式见使用指南</span></div>
+        </aside>
+      </section>
+
+      <section class="catalog-section" id="catalog" aria-labelledby="catalog-heading">
+        <aside class="sidebar" aria-label="筛选技能">
+          <h2>网站分类</h2>
+          <div id="category-filters" class="category-filters"></div>
+          <h2 class="filter-heading">验证范围</h2>
+          <label class="select-label" for="evidence-filter">按流程证据筛选</label>
+          <select id="evidence-filter">
+            <option value="all">全部验证范围</option>
+            <option value="live-verified">含已验证流程</option>
+            <option value="live-partial">含部分完成流程</option>
+            <option value="documented">含文档依据流程</option>
+          </select>
+          <div class="sidebar-help"><span aria-hidden="true">↗</span><h3>有新的研究成果？</h3><p>让你的 Agent 整理技能包，提交给社区。</p><button class="text-button" data-contribute>了解贡献方式 <span aria-hidden="true">→</span></button></div>
+        </aside>
+
+        <div class="catalog-main">
+          <div class="catalog-toolbar">
+            <div><h2 id="catalog-heading">全部网站</h2><p id="result-count" role="status">正在加载技能目录…</p></div>
+            <label class="sort-control"><span>排序</span><select id="sort"><option value="recent">最近核查</option><option value="name">网站名称</option><option value="workflows">流程数量</option></select></label>
+          </div>
+          <div id="cards" class="card-grid" aria-label="网站技能列表"></div>
+          <div id="empty-state" class="empty-state" hidden><span aria-hidden="true">⌕</span><h3>还没有匹配的网站技能</h3><p>试试网站名称、域名或其他任务词，也可以贡献新的研究成果。</p><button id="reset-filters" class="button button-light">清除筛选</button></div>
+          <div id="load-error" class="empty-state" hidden><h3>技能目录暂时无法加载</h3><p>请刷新页面，或从 GitHub 仓库浏览和安装。</p><a class="button button-light" href="https://github.com/batoosai2nd/agent-site-atlas/tree/main/skills">前往 GitHub</a></div>
+          <div class="contribution-banner"><div><p class="banner-label">一起补全网站技能库</p><h3>把你探索过的网站，分享给下一个人。</h3><p>整理操作路径与实测范围，提交 PR，合并后出现在这里。</p></div><button class="button button-dark" data-contribute>提交网站技能 <span aria-hidden="true">↗</span></button></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><div><strong>Agent Site Atlas</strong><span>社区共享 · MIT 开源</span></div><a href="https://github.com/batoosai2nd/agent-site-atlas/blob/main/docs/validation.md" target="_blank" rel="noopener noreferrer">验证记录 ↗</a><a href="https://github.com/batoosai2nd/agent-site-atlas/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">贡献指南 ↗</a></footer>
+
+    <dialog id="detail-dialog" aria-labelledby="detail-title"><div class="dialog-content" id="detail-content"></div><button class="dialog-close" aria-label="关闭技能详情">×</button></dialog>
+    <dialog id="contribute-dialog" aria-labelledby="contribute-title">
+      <div class="dialog-content">
+        <p class="eyebrow">贡献网站技能</p><h2 id="contribute-title">把研究成果交给社区</h2><p class="dialog-intro">使用 GitHub 账号提交 PR。维护者合并后，网站会自动更新目录和下载包。</p>
+        <div class="contribute-steps"><div><b>整理技能</b><span>网站入口、操作流程、验证日期和范围</span></div><div><b>提交 PR</b><span>由 agent 整理文件并创建 GitHub 提交</span></div><div><b>合并上架</b><span>自动生成网页条目和独立 ZIP</span></div></div>
+        <h3>复制给你的 Agent</h3><p class="muted">已经研究过网站时，把下面这段发给它。</p><textarea id="contribution-prompt" readonly aria-label="贡献技能提示词"></textarea><button class="button button-dark" id="copy-contribution">复制贡献提示词</button>
+        <div class="manual-contribute"><h3>已有完整技能包</h3><p>Fork 仓库，将完整文件夹放入 <code>skills/site-&lt;id&gt;/</code>，填写验证范围后提交 PR。格式与检查步骤见贡献指南。</p><div class="button-row"><a class="button button-light" href="https://github.com/batoosai2nd/agent-site-atlas/fork" target="_blank" rel="noopener noreferrer">在 GitHub 开始贡献 ↗</a><a class="text-button" href="https://github.com/batoosai2nd/agent-site-atlas/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">查看贡献指南</a><a class="text-button" href="./downloads/site-study.zip" download>下载 site-study</a></div></div>
+      </div><button class="dialog-close" aria-label="关闭贡献说明">×</button>
+    </dialog>
+    <div id="toast" class="toast" role="status" hidden></div>
+    <noscript><p class="noscript">启用 JavaScript 可使用筛选与详情，也可直接浏览 <a href="https://github.com/batoosai2nd/agent-site-atlas/tree/main/skills">GitHub 技能目录</a>。</p></noscript>
+  </body>
+</html>
