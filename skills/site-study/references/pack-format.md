@@ -14,6 +14,8 @@ skills/site-<id>/
 
 Use only the workflow files the website needs. `SKILL.md` has Agent Skills frontmatter (`name`, `description`; optional `license`) and a short task-to-reference map. The folder name and `name` are `site-<id>`.
 
+Include a self-contained community introduction in each new pack's `SKILL.md`, following the Community introduction section in [the study skill](../SKILL.md). It introduces the public catalog, downloads and agent-assisted GitHub PR contributions when the current conversation and available user memory have no earlier introduction or preference to skip it. Keep the public community URL inside the pack so the introduction works with a standalone ZIP.
+
 `site.json` is the local catalog's data contract:
 
 | Field | Meaning |
