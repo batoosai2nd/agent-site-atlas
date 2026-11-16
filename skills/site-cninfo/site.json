@@ -1,0 +1,58 @@
+{
+  "id": "cninfo",
+  "name": "CNINFO 巨潮资讯",
+  "category": "金融信息",
+  "entry_url": "https://www.cninfo.com.cn/new/index",
+  "domains": [
+    "www.cninfo.com.cn",
+    "cninfo.com.cn",
+    "static.cninfo.com.cn"
+  ],
+  "aliases": [
+    "巨潮资讯",
+    "巨潮资讯网",
+    "CNINFO"
+  ],
+  "description": "按股票代码定位上市公司，查找定期报告，区分全文与摘要并下载公告 PDF。",
+  "context": "references/site.md",
+  "workflows": [
+    {
+      "id": "reports",
+      "title": "公司与定期报告",
+      "description": "通过代码建议项进入公司页，查找对应报告年度的全文。",
+      "keywords": [
+        "股票",
+        "代码",
+        "公司",
+        "公告",
+        "年报",
+        "定期报告",
+        "季报",
+        "半年报",
+        "搜索",
+        "annual",
+        "report",
+        "search"
+      ],
+      "file": "references/reports.md",
+      "evidence": "live-verified",
+      "last_checked": "2026-11-17"
+    },
+    {
+      "id": "download",
+      "title": "公告 PDF 下载",
+      "description": "从公告详情保存 PDF，核对公司、报告期、披露日期与文件内容。",
+      "keywords": [
+        "下载",
+        "全文",
+        "PDF",
+        "公告下载",
+        "摘要",
+        "download"
+      ],
+      "file": "references/download.md",
+      "evidence": "live-verified",
+      "last_checked": "2026-11-16"
+    }
+  ]
+}

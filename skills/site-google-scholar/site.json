@@ -1,0 +1,72 @@
+{
+  "id": "google-scholar",
+  "name": "Google Scholar 谷歌学术",
+  "category": "学术研究",
+  "entry_url": "https://scholar.google.com/",
+  "domains": [
+    "scholar.google.com",
+    "scholar.googleusercontent.com"
+  ],
+  "aliases": [
+    "Google Scholar",
+    "谷歌学术",
+    "Google学术"
+  ],
+  "description": "谷歌学术论文检索、引文导出、版本选择与可访问全文下载。",
+  "context": "references/site.md",
+  "workflows": [
+    {
+      "id": "search",
+      "title": "论文检索与版本定位",
+      "description": "按标题或主题查找论文，核对书目信息，查看合并版本。",
+      "keywords": [
+        "检索",
+        "搜索",
+        "论文",
+        "标题",
+        "作者",
+        "版本",
+        "search",
+        "title",
+        "versions"
+      ],
+      "file": "references/search.md",
+      "evidence": "live-verified",
+      "last_checked": "2026-11-17"
+    },
+    {
+      "id": "cite",
+      "title": "引文与 BibTeX",
+      "description": "打开引用对话框，提取格式化引文与 BibTeX 文本。",
+      "keywords": [
+        "引用",
+        "引文",
+        "导出",
+        "BibTeX",
+        "EndNote",
+        "cite",
+        "citation",
+        "export"
+      ],
+      "file": "references/cite.md",
+      "evidence": "live-verified",
+      "last_checked": "2026-11-17"
+    },
+    {
+      "id": "download",
+      "title": "可访问全文下载",
+      "description": "从结果的 PDF 链接进入来源站，保存并核对论文文件。",
+      "keywords": [
+        "全文",
+        "下载",
+        "PDF",
+        "版本",
+        "download",
+        "full text"
+      ],
+      "file": "references/download.md",
+      "evidence": "live-verified",
+      "last_checked": "2026-11-16"
+    }
+  ]
+}

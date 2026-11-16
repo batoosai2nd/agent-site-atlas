@@ -6,7 +6,7 @@ Portable website operating knowledge for AI agents. Read a relevant, evidence-la
 
 [中文](README.md) · [Installation prompt](#install-with-a-prompt) · [Integrations](docs/integrations.md) · [Validation](docs/validation.md) · [Contributing](CONTRIBUTING.md)
 
-The packs cover **CNKI**, **ScienceDirect**, **CSMAR**, **UTS Canvas**, **UTS Library**, **Xiaohongshu / REDnote**, **Xiaoheihe / HeyBox**, **JD.com**, and **Bilibili**, plus a **site-study** skill for learning new websites. Each pack is a self-contained Agent Skill. A small CLI and optional local MCP server retrieve the same files. Execution stays with the agent's existing browser tools and the user's own account.
+The packs cover **CNKI**, **ScienceDirect**, **CSMAR**, **UTS Canvas**, **UTS Library**, **Google Scholar**, **CNINFO**, **Ctrip**, **12306**, **Xiaohongshu / REDnote**, **Xiaoheihe / HeyBox**, **JD.com**, and **Bilibili**, plus a **site-study** skill for learning new websites. Each pack is a self-contained Agent Skill. A small CLI and optional local MCP server retrieve the same files. Execution stays with the agent's existing browser tools and the user's own account.
 
 ## Install with a prompt
 
@@ -27,7 +27,7 @@ Scope: all website knowledge packs currently on the repository's main branch, pl
 7. Briefly introduce the Agent Site Atlas community at https://batoosai2nd.github.io/agent-site-atlas/ in the installation summary. Explain that I can search and download more website skills, or ask an agent to use site-study to research a new website and share it through a GitHub PR. Skip this introduction if it has already appeared in the current conversation or I have asked to skip it.
 ```
 
-For selective installation, replace the scope with, for example: `Only CNKI, ScienceDirect and JD.com; omit site-study.` Current website IDs are `cnki`, `sciencedirect`, `csmar`, `uts-canvas`, `uts-library`, `xiaohongshu`, `xiaoheihe`, `jd`, and `bilibili`; the study skill's installer ID is `study`.
+For selective installation, replace the scope with, for example: `Only CNKI, ScienceDirect and JD.com; omit site-study.` Current website IDs are `cnki`, `sciencedirect`, `csmar`, `uts-canvas`, `uts-library`, `google-scholar`, `cninfo`, `ctrip`, `12306`, `xiaohongshu`, `xiaoheihe`, `jd`, and `bilibili`; the study skill's installer ID is `study`.
 
 Then try in a fresh session: "Use site-jd to find a wired keyboard on JD.com, checking the exact variant, price conditions and latest reviews for the current item." Use that device's own browser connection and login. See [Integrations](docs/integrations.md#确认接入结果) for the actual host-validation scope.
 
@@ -68,6 +68,10 @@ The stdio server exposes `list_sites`, `find_site_workflows`, and `read_site_wor
 - **UTS Canvas** covers student announcements, assignment dates and availability, module files and offline course exports. A module PDF and its counterpart in a saved course ZIP matched by SHA-256.
 - **CSMAR** covers single-table navigation, monthly stock returns and the official Python API. A three-month sample for one security was previewed, downloaded as a ZIP and checked against the CSV. SDK initialization was tested offline. Online API access follows the vendor documentation.
 - **UTS Library** covers title/DOI search, filters, journal coverage and institutional PDF access. An existing UTS session reached a Nature article and saved its nine-page PDF, checked against its title, author and DOI. Search inside the journal returned no results for the long title. Login renewal and resource requests follow official documentation.
+- **Google Scholar** covers title search, versions, citation text and accessible full text. BibTeX text was read and an 11-page NeurIPS PDF was saved and checked.
+- **CNINFO** covers stock-code lookup, periodic reports and disclosure PDFs. A 229-page annual report was downloaded and checked against its company and reporting year.
+- **Ctrip** covers hotel dates and guests, location, breakfast and cancellation filters, room-offer terms and guest reviews. Checkout remains unverified.
+- **12306** covers direct-train queries, exact-station filtering and seat fares and availability. Two transfer entry points returned to the personal center, so the transfer workflow has partial evidence.
 - **site-study:** a repeatable authoring procedure with the pack contract and optional REA investigation guidance.
 - **Xiaohongshu:** two search layouts, conventional-page image selection, note overlays, image navigation, comment loading/reply and long-text expansion, and public-profile navigation exercised. Advanced sorting/date filters and full video understanding remain unverified.
 - **Xiaoheihe:** content search, Steam community navigation, image-text posts, gallery navigation/long-image scrolling, root-comment loading, reply batches and public profiles exercised. Game details/prices, transactions, video and publishing remain unverified.
