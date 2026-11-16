@@ -103,12 +103,8 @@ select { color: #627366; background: transparent; border: 1px solid #dce4dc; bor
 .card-top .category-tag { margin-left: auto; }
 .card-selection { font-size: 11px; gap: 5px; }
 .card-top .site-icon { flex-shrink: 0; }
-.site-icon { display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 11px; font-size: 17px; font-weight: 800; letter-spacing: -.6px; background: #e8eff0; color: #4d7985; }
-.site-icon[data-site="jd"] { background: #fff0ec; color: #d74939; }
-.site-icon[data-site="xiaohongshu"] { background: #fff0f1; color: #d94457; font-size: 11px; }
-.site-icon[data-site="xiaoheihe"] { background: #ecedf0; color: #3d424a; }
-.site-icon[data-site="cnki"] { background: #eaf0fb; color: #4065a4; }
-.site-icon[data-site="sciencedirect"] { background: #fff1e6; color: #c57436; }
+.site-icon { display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 11px; font-size: 17px; font-weight: 800; letter-spacing: -.6px; background: #f7f9f6; color: #4d7985; border: 1px solid var(--line); }
+.site-icon img { display: block; width: 28px; height: 28px; object-fit: contain; }
 .category-tag { color: #819087; font-size: 10px; border: 1px solid #edf0eb; padding: 3px 7px; border-radius: 5px; }
 .skill-card h3 { margin: 17px 0 0; font-size: 17px; letter-spacing: -.4px; }
 .site-domain { color: #9aa39d; font-size: 10px; margin: 0 0 13px; }
@@ -143,7 +139,7 @@ dialog::backdrop { background: #1a302155; backdrop-filter: blur(4px); }
 .dialog-intro, .muted { color: var(--muted); font-size: 13px; }
 .detail-heading { display: flex; gap: 15px; align-items: center; margin-bottom: 19px; padding-right: 20px; }
 .detail-heading .site-icon { width: 54px; height: 54px; font-size: 20px; flex-shrink: 0; }
-.detail-heading .site-icon[data-site="xiaohongshu"] { font-size: 13px; }
+.detail-heading .site-icon img { width: 34px; height: 34px; }
 .detail-heading h2 { margin: 0; }
 .detail-heading p { margin: 2px 0 0; color: var(--muted); font-size: 12px; }
 .detail-note { padding: 12px 15px; background: #f2f5ef; color: #74816d; font-size: 12px; border-radius: 7px; }

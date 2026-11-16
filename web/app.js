@@ -4,7 +4,6 @@ const evidenceLabels = {
   'live-partial': '部分完成',
   documented: '文档依据',
 };
-const siteMarks = { cnki: '知', sciencedirect: 'Sd', xiaohongshu: '小红书', xiaoheihe: '盒', jd: 'JD' };
 const elements = {
   search: document.querySelector('#search'),
   categories: document.querySelector('#category-filters'),
@@ -63,9 +62,18 @@ function chinesePart(text) {
 }
 
 function icon(pack) {
-  const element = node('span', 'site-icon', siteMarks[pack.id] || pack.name.slice(0, 2));
-  element.dataset.site = pack.id;
+  const element = node('span', 'site-icon');
   element.setAttribute('aria-hidden', 'true');
+  if (pack.icon) {
+    const image = node('img');
+    image.src = pack.icon;
+    image.alt = '';
+    image.width = 32;
+    image.height = 32;
+    element.append(image);
+  } else {
+    element.textContent = pack.name.slice(0, 2);
+  }
   return element;
 }
 
