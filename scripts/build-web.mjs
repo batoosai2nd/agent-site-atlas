@@ -7,6 +7,8 @@ import { loadAtlas, readWorkflow } from '../src/atlas.js';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const output = path.join(root, 'dist');
 const atlas = await loadAtlas();
+const iconsDirectory = path.join(root, 'web', 'icons');
+const iconFiles = await readdir(iconsDirectory);
 
 async function filesIn(directory, prefix = '') {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -34,6 +36,7 @@ async function archiveSkill(id, directory) {
 }
 
 await mkdir(path.join(output, 'downloads'), { recursive: true });
+await mkdir(path.join(output, 'icons'), { recursive: true });
 const catalog = [];
 for (const pack of atlas.packs) {
   if (pack.category !== undefined && (typeof pack.category !== 'string' || !pack.category.trim())) {
@@ -47,8 +50,11 @@ for (const pack of atlas.packs) {
     workflows.push({ ...flow, content: result.content });
   }
   const { id, name, description, entry_url, domains, aliases } = pack;
+  const iconFile = iconFiles.find(file => path.parse(file).name === id);
+  if (iconFile) await copyFile(path.join(iconsDirectory, iconFile), path.join(output, 'icons', iconFile));
   catalog.push({
     id, name, description, entry_url, domains, aliases,
+    icon: iconFile ? `./icons/${iconFile}` : undefined,
     category: pack.category?.trim() || '其他网站',
     last_checked: workflows.map(flow => flow.last_checked).sort().at(-1),
     contextText,
