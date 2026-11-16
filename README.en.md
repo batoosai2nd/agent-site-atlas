@@ -2,6 +2,8 @@
 
 Portable website operating knowledge for AI agents. Read a relevant, evidence-labeled workflow before exploring the same interface again.
 
+[Browse the website skill catalog](https://batoosai2nd.github.io/agent-site-atlas/) to search websites, inspect workflow coverage, download standalone ZIPs and contribute researched skills through GitHub PRs.
+
 [中文](README.md) · [Installation prompt](#install-with-a-prompt) · [Integrations](docs/integrations.md) · [Validation](docs/validation.md) · [Contributing](CONTRIBUTING.md)
 
 The packs cover **CNKI**, **ScienceDirect**, **Xiaohongshu / REDnote**, **Xiaoheihe / HeyBox**, and **JD.com**, plus a **site-study** skill for learning new websites. Each pack is a self-contained Agent Skill. A small CLI and optional local MCP server retrieve the same files. Execution stays with the agent's existing browser tools and the user's own account.
@@ -69,6 +71,10 @@ The stdio server exposes `list_sites`, `find_site_workflows`, and `read_site_wor
 ## Contribute and test
 
 Install the study skill with `node bin/site-atlas.js install study --agent codex`, then ask the agent to investigate concrete tasks and produce a pack. Public contributions contain original instructions and sanitized observations, not login sessions, signed links, raw captures or paper files.
+
+After research, ask the agent to submit the pack to Agent Site Atlas using your GitHub account and return the PR URL. The study skill includes a [publishing guide](skills/site-study/references/publish.md). Merged contributions appear in the public catalog after the Pages deployment completes.
+
+The frontend lives in `web/`. Run `npm run build:web` to generate `dist/` from the existing `skills/` packs, including catalog data, workflow text and standalone ZIP downloads. Preview `dist/` with a static HTTP server. The GitHub workflow builds pull requests and publishes updates to `main` through GitHub Pages.
 
 ```sh
 npm install --ignore-scripts

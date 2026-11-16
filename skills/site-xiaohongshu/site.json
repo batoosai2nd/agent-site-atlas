@@ -1,5 +1,6 @@
 {
   "id": "xiaohongshu",
+  "category": "社区内容",
   "name": "小红书 / Xiaohongshu / REDnote",
   "description": "Search notes, read text and images, expand comments and inspect public profiles / 小红书检索、图文与评论读取",
   "entry_url": "https://www.xiaohongshu.com/explore",

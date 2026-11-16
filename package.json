@@ -8,11 +8,15 @@
   "bin": { "site-atlas": "bin/site-atlas.js" },
   "files": ["bin", "src", "skills", "README.md", "README.en.md", "LICENSE", "docs"],
   "scripts": {
+    "build:web": "node scripts/build-web.mjs",
     "test": "node --test test/atlas.test.js test/mcp.test.js",
     "start": "node bin/site-atlas.js serve"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.32.2",
     "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "fflate": "^0.8.3"
   }
 }
