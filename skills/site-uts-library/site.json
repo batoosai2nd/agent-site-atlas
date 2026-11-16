@@ -1,0 +1,48 @@
+{
+  "id": "uts-library",
+  "category": "学术研究",
+  "name": "UTS Library 悉尼科技大学图书馆",
+  "description": "UTS 论文标题、DOI 与主题检索，期刊覆盖核对，LibKey 和机构代理全文下载。",
+  "entry_url": "https://www.lib.uts.edu.au/",
+  "domains": ["www.lib.uts.edu.au", "lib.uts.edu.au", "search.lib.uts.edu.au", "ezproxy.lib.uts.edu.au", "www-nature-com.ezproxy.lib.uts.edu.au", "faq.lib.uts.edu.au"],
+  "aliases": ["UTS", "UTS Library", "University of Technology Sydney Library", "悉尼科技大学图书馆", "UTS图书馆"],
+  "context": "references/site.md",
+  "workflows": [
+    {
+      "id": "search",
+      "title": "论文检索与筛选 / Find papers",
+      "description": "按标题、DOI、主题定位论文，使用高级标题匹配、类型、年份和在线可用筛选。",
+      "keywords": ["搜索", "检索", "论文", "标题", "作者", "主题", "DOI", "筛选", "年份", "同行评议", "search", "title", "advanced", "filter"],
+      "file": "references/search.md",
+      "evidence": "live-verified",
+      "last_checked": "2026-11-16"
+    },
+    {
+      "id": "download",
+      "title": "机构全文与 PDF 下载 / Download full text",
+      "description": "从 Download PDF 或 View Online 进入出版社，使用当前 UTS 权限保存并验收论文。",
+      "keywords": ["下载", "全文", "论文", "PDF", "机构", "代理", "LibKey", "EZproxy", "View Online", "download", "full text", "Nature"],
+      "file": "references/download.md",
+      "evidence": "live-verified",
+      "last_checked": "2026-11-16"
+    },
+    {
+      "id": "journals",
+      "title": "期刊入口与覆盖 / Check journal coverage",
+      "description": "按期刊查找提供方、覆盖年份与禁运期，处理期刊内搜索的空结果。",
+      "keywords": ["期刊", "ISSN", "覆盖", "订阅", "禁运期", "卷期", "journal", "coverage", "embargo", "Search inside"],
+      "file": "references/journals.md",
+      "evidence": "live-verified",
+      "last_checked": "2026-11-16"
+    },
+    {
+      "id": "access",
+      "title": "校外访问与资源请求 / Access help",
+      "description": "根据官方说明处理 Scholar 机构入口、访问问题和图书馆资源请求。",
+      "keywords": ["校外", "登录", "权限", "故障", "访问", "馆际互借", "资源请求", "Google Scholar", "Unpaywall", "login", "access", "request", "off campus"],
+      "file": "references/access.md",
+      "evidence": "documented",
+      "last_checked": "2026-11-16"
+    }
+  ]
+}
