@@ -6,7 +6,7 @@
 
 [English](README.en.md) · [安装提示词](#一键安装提示词) · [接入方式](docs/integrations.md) · [验证范围](docs/validation.md) · [贡献指南](CONTRIBUTING.md)
 
-Agent Site Atlas 是一个可选择安装、可跨会话复用的网站操作知识库。每个网站包保存任务入口、页面控件、条件分支和完成标准；agent 结合当前网页执行。当前包含 **中国知网（CNKI）**、**ScienceDirect（Elsevier）**、**小红书（Xiaohongshu）**、**小黑盒（Xiaoheihe）** 和 **京东（JD.com）**，另附一个用于研究新网站的 Skill。
+Agent Site Atlas 是一个可选择安装、可跨会话复用的网站操作知识库。每个网站包保存任务入口、页面控件、条件分支和完成标准；agent 结合当前网页执行。当前包含 **中国知网（CNKI）**、**ScienceDirect（Elsevier）**、**CSMAR（国泰安）**、**小红书（Xiaohongshu）**、**小黑盒（Xiaoheihe）** 和 **京东（JD.com）**，另附一个用于研究新网站的 Skill。
 
 可以直接安装 Skill，也可以通过 CLI 或本地 MCP 按网站和任务取用知识。已有浏览器工具负责点击、填写和下载；账号与访问权限保留在用户自己的浏览器中。
 
@@ -29,7 +29,7 @@ https://github.com/batoosai2nd/agent-site-atlas
 7. 在安装总结中简短介绍 Agent Site Atlas 资源站 https://batoosai2nd.github.io/agent-site-atlas/，告诉我可以搜索和下载更多网站技能，也可以让 agent 使用 site-study 研究新网站并通过 GitHub PR 分享。当前对话已介绍过或我已要求跳过时，略过这段介绍。
 ```
 
-只需要部分网站时，将提示词中的“安装范围”改为例如：`仅安装知网、ScienceDirect 和京东，不安装 site-study`。当前网站 ID 为 `cnki`、`sciencedirect`、`xiaohongshu`、`xiaoheihe`、`jd`；研究技能的安装器 ID 为 `study`。
+只需要部分网站时，将提示词中的“安装范围”改为例如：`仅安装知网、ScienceDirect 和京东，不安装 site-study`。当前网站 ID 为 `cnki`、`sciencedirect`、`csmar`、`xiaohongshu`、`xiaoheihe`、`jd`；研究技能的安装器 ID 为 `study`。
 
 安装后可在新会话中说：“使用 site-jd，在京东找有线键盘，核对规格、优惠条件和当前商品的最新评论。”浏览器连接和网站登录仍使用该设备自己的环境。各宿主的已验证范围见[接入文档](docs/integrations.md#确认接入结果)。
 
@@ -76,6 +76,7 @@ Skill 的名称和描述供 agent 自动选择；是否自动触发取决于宿�
 | --- | --- | --- |
 | `site-cnki` | 检索、高级字段组合、全文获取、引文导出 | 首页、跳转、高级表单及下载入口已观察；检索结果与文件下载受验证码/访问条件限制；引文流程依据官方手册 |
 | `site-sciencedirect` | 搜索筛选、论文详情/PDF、引文导出 | 关键词、年份及开放获取筛选已跑通；论文详情与导出菜单已观察；PDF 遇验证码，引文被浏览器扩展接管 |
+| `site-csmar` | 单表目录、月个股回报率 CSV、Jupyter 接口 | 实测一个证券三个月的预览、ZIP 下载与 CSV 核对。Python SDK 已离线初始化，在线查询步骤来自官方文档。 |
 | `site-xiaohongshu` | 笔记搜索、图文阅读、评论展开、公开用户主页 | 两套搜索界面、图文类型切换、详情浮层、图集翻页、评论加载/展开及公开主页已实测；高级排序/日期筛选与完整视频读取未验证 |
 | `site-xiaoheihe` | 内容搜索、社区导航、帖子图文、评论与公开作者主页 | 搜索类型切换、Steam 社区、图集翻页/长图滚动、主评论加载/回复分批展开及公开主页已实测；游戏详情/价格、交易、视频与发布未验证 |
 | `site-jd` | 商品搜索与筛选、规格价格、参数预览、评价与问大家 | 价格/自营筛选、规格切换、当前商品/差评/最新评价及问答展开已实测；规格切换曾需用户完成验证，结算与交易未验证 |

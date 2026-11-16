@@ -1,0 +1,89 @@
+{
+  "id": "csmar",
+  "category": "学术研究",
+  "name": "CSMAR 国泰安数据库",
+  "description": "CSMAR 单表目录、月个股回报率 CSV 导出与核对、Jupyter 官方接口入门。",
+  "entry_url": "https://data.csmar.com/",
+  "domains": [
+    "data.csmar.com"
+  ],
+  "aliases": [
+    "国泰安",
+    "CSMAR",
+    "国泰安数据库",
+    "CSMAR经济金融研究数据库",
+    "China Stock Market & Accounting Research"
+  ],
+  "context": "references/site.md",
+  "workflows": [
+    {
+      "id": "catalog",
+      "title": "单表查询与目录定位 / Find a table",
+      "description": "从系列、数据库和分类定位到目标表，核对表的频率及时间基准。",
+      "keywords": [
+        "单表查询",
+        "数据中心",
+        "菜单",
+        "目录",
+        "定位",
+        "表名",
+        "数据库",
+        "查表",
+        "资产负债表",
+        "catalog",
+        "find table"
+      ],
+      "file": "references/catalog.md",
+      "evidence": "live-verified",
+      "last_checked": "2026-11-16"
+    },
+    {
+      "id": "monthly-returns",
+      "title": "月个股回报率 CSV / Download monthly stock returns",
+      "description": "选定证券、交易月份和现金红利口径，预览、保存 ZIP 并在 pandas 核对 CSV。",
+      "keywords": [
+        "月个股回报率",
+        "月收益率",
+        "月度收益率",
+        "下载",
+        "导出",
+        "分红",
+        "再投资",
+        "红利",
+        "预览",
+        "交易月份",
+        "TRD_Mnth",
+        "Mretwd",
+        "Mretnd",
+        "CSV",
+        "pandas",
+        "download",
+        "monthly returns"
+      ],
+      "file": "references/monthly-returns.md",
+      "evidence": "live-verified",
+      "last_checked": "2026-11-16"
+    },
+    {
+      "id": "python-api",
+      "title": "Jupyter 与官方 Python API / Python API access",
+      "description": "在 Notebook 检查内核及 SDK，查询授权库表，按官方参数构造小样本查询。",
+      "keywords": [
+        "Jupyter",
+        "Notebook",
+        "Python",
+        "SDK",
+        "API",
+        "接口",
+        "内核",
+        "query_df",
+        "getListDbs",
+        "权限",
+        "个人账号"
+      ],
+      "file": "references/python-api.md",
+      "evidence": "documented",
+      "last_checked": "2026-11-16"
+    }
+  ]
+}
