@@ -82,11 +82,27 @@ select { color: #627366; background: transparent; border: 1px solid #dce4dc; bor
 .catalog-toolbar p { color: #89958c; margin: 4px 0 0; font-size: 11px; }
 .sort-control { color: #849187; font-size: 11px; display: flex; gap: 9px; align-items: center; }
 .sort-control select { background: white; }
+.batch-install { margin-bottom: 20px; padding: 16px; background: #edf4ed; border: 1px solid #d4e2d4; border-radius: 10px; }
+.batch-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; }
+.selection-control { display: inline-flex; align-items: center; gap: 7px; cursor: pointer; font-size: 12px; color: #4b6856; min-height: 32px; }
+.selection-control input { width: 17px; height: 17px; margin: 0; accent-color: var(--green); cursor: pointer; }
+#selected-count { font-size: 12px; color: #5d7463; }
+.batch-client { display: flex; align-items: center; gap: 8px; margin-left: auto; font-size: 12px; color: #5d7463; white-space: nowrap; }
+.batch-client select { background: white; max-width: 160px; }
+.batch-install button:disabled { cursor: default; opacity: .5; transform: none; }
+.selected-sites { margin: 10px 0 0; color: #4b6856; font-size: 12px; overflow-wrap: anywhere; }
+.batch-preview { margin-top: 10px; }
+.batch-preview summary { cursor: pointer; font-size: 12px; color: var(--green); }
+.batch-preview textarea { height: 220px; margin-bottom: 0; }
 .card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
 .skill-card { background: white; border: 1px solid var(--line); border-radius: 11px; overflow: hidden; display: flex; flex-direction: column; transition: box-shadow .2s, border-color .2s, transform .2s; }
 .skill-card:hover { border-color: #b8cdbd; box-shadow: 0 7px 22px #284b3210; transform: translateY(-3px); }
-.card-link { padding: 21px 20px 0; display: block; flex: 1; }
-.card-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.skill-card.is-selected { border-color: var(--green); box-shadow: 0 0 0 1px var(--green); }
+.card-link { padding: 0 20px; display: block; flex: 1; }
+.card-top { display: flex; align-items: center; gap: 8px; padding: 21px 20px 0; }
+.card-top .category-tag { margin-left: auto; }
+.card-selection { font-size: 11px; gap: 5px; }
+.card-top .site-icon { flex-shrink: 0; }
 .site-icon { display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 11px; font-size: 17px; font-weight: 800; letter-spacing: -.6px; background: #e8eff0; color: #4d7985; }
 .site-icon[data-site="jd"] { background: #fff0ec; color: #d74939; }
 .site-icon[data-site="xiaohongshu"] { background: #fff0f1; color: #d94457; font-size: 11px; }
@@ -156,3 +172,5 @@ textarea { width: 100%; height: 146px; resize: vertical; border: 1px solid #dae4
 @media (max-width: 780px) { .header-inner { padding: 0 24px; } main, .site-footer { margin-left: 24px; margin-right: 24px; } nav { gap: 16px; } nav .github-link { display: none; } .hero { grid-template-columns: 1fr; padding: 42px 0 35px; gap: 0; } .hero-note { display: none; } h1 { font-size: 38px; } .catalog-section { grid-template-columns: 1fr; gap: 20px; padding-top: 25px; } .sidebar { padding: 0; } .sidebar h2, .sidebar .filter-heading, .sidebar-help { display: none; } .category-filters { flex-direction: row; flex-wrap: wrap; margin-bottom: 12px; } .category-filters button { gap: 12px; border: 1px solid var(--line); padding: 7px 12px; } .sidebar select { width: auto; } .catalog-toolbar { margin-bottom: 19px; } .contribution-banner { align-items: flex-start; flex-direction: column; gap: 15px; } .site-footer { flex-wrap: wrap; gap: 12px 20px; } .site-footer > div { width: 100%; } }
 @media (max-width: 480px) { .site-header { height: 70px; } .brand { font-size: 27px; gap: 8px; } .brand-mark { width: 24px; height: 24px; gap: 3px; } nav { gap: 10px; } nav a { display: none; } nav .button { padding: 8px 12px; font-size: 11px; } h1 { font-size: 31px; } .hero-description { font-size: 12px; } .desktop-break { display: none; } .search-form { padding: 0 13px; gap: 11px; } .search-form input { font-size: 11px; } .search-form kbd { display: none; } .card-grid { grid-template-columns: 1fr; } .catalog-toolbar h2 { font-size: 18px; } .sort-control > span { display: none; } .card-description { min-height: auto; } .dialog-content { padding: 30px 21px; } .dialog-content h2 { font-size: 23px; } .contribute-steps { gap: 10px; } .workflow summary span { float: none; display: block; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; } }
+@media (max-width: 780px) { .batch-client { margin-left: 0; } }
+@media (max-width: 480px) { .batch-controls { gap: 10px 12px; } .batch-client { width: 100%; } .batch-client select { flex: 1; max-width: none; } #copy-selected { width: 100%; } }
