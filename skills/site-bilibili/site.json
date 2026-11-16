@@ -1,0 +1,57 @@
+{
+  "id": "bilibili",
+  "category": "社区内容",
+  "name": "哔哩哔哩 / Bilibili",
+  "description": "Video search, captions, parts, comments and creator uploads / B站视频检索、字幕查看、分P定位、评论与UP主研究",
+  "entry_url": "https://www.bilibili.com/",
+  "domains": ["www.bilibili.com", "search.bilibili.com", "space.bilibili.com"],
+  "aliases": ["哔哩哔哩", "Bilibili", "B站", "b站", "小破站"],
+  "context": "references/site.md",
+  "workflows": [
+    {
+      "id": "search",
+      "title": "Search and filter videos / 视频搜索与筛选",
+      "description": "Search from the homepage, choose result types, apply duration, recent-half-year and publication-order controls, and identify video candidates.",
+      "keywords": ["search", "find", "filter", "sort", "duration", "date", "搜索", "检索", "找视频", "筛选", "排序", "时长", "日期", "最近半年", "最新发布"],
+      "file": "references/search.md",
+      "evidence": "live-verified",
+      "last_checked": "2026-11-16"
+    },
+    {
+      "id": "video",
+      "title": "Read video details and captions / 视频详情与字幕",
+      "description": "Identify a video and creator, read visible metadata and description, pause playback and inspect an available caption cue.",
+      "keywords": ["video", "caption", "subtitle", "description", "视频", "详情", "简介", "字幕", "播放", "暂停", "发布时间"],
+      "file": "references/video.md",
+      "evidence": "live-verified",
+      "last_checked": "2026-11-16"
+    },
+    {
+      "id": "parts",
+      "title": "Navigate video parts / 分P与合集定位",
+      "description": "Select a named part in a collection sidebar and verify the resulting BV ID, part parameter, title and player duration.",
+      "keywords": ["parts", "playlist", "collection", "course", "分P", "分p", "选集", "合集", "系列", "章节", "课程"],
+      "file": "references/parts.md",
+      "evidence": "live-verified",
+      "last_checked": "2026-11-16"
+    },
+    {
+      "id": "comments",
+      "title": "Read comments and reply pages / 评论与楼中楼",
+      "description": "Load the comment area, switch latest ordering, expand a root comment's replies and navigate reply pages.",
+      "keywords": ["comments", "replies", "latest", "评论", "回复", "楼中楼", "最新评论", "热评", "讨论"],
+      "file": "references/comments.md",
+      "evidence": "live-verified",
+      "last_checked": "2026-11-16"
+    },
+    {
+      "id": "users",
+      "title": "Search creator uploads / UP主空间与投稿",
+      "description": "Open the video's public creator space, inspect uploads and search within that creator's content.",
+      "keywords": ["creator", "uploader", "profile", "uploads", "UP主", "up主", "作者", "空间", "主页", "投稿", "用户"],
+      "file": "references/users.md",
+      "evidence": "live-verified",
+      "last_checked": "2026-11-16"
+    }
+  ]
+}
