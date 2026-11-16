@@ -1,0 +1,79 @@
+{
+  "id": "ctrip",
+  "name": "Ctrip 携程",
+  "category": "旅行出行",
+  "entry_url": "https://www.ctrip.com/",
+  "domains": [
+    "www.ctrip.com",
+    "hotels.ctrip.com"
+  ],
+  "aliases": [
+    "携程",
+    "携程旅行",
+    "携程酒店",
+    "Ctrip"
+  ],
+  "description": "携程酒店搜索与筛选、房型早餐和取消条件核对、住客点评阅读。",
+  "context": "references/site.md",
+  "workflows": [
+    {
+      "id": "hotels",
+      "title": "酒店搜索与筛选",
+      "description": "设置酒店当地日期和入住人数，组合位置、早餐与取消条件。",
+      "keywords": [
+        "酒店",
+        "搜索",
+        "目的地",
+        "日期",
+        "人数",
+        "筛选",
+        "位置",
+        "早餐",
+        "取消",
+        "hotel",
+        "search",
+        "filter"
+      ],
+      "file": "references/hotels.md",
+      "evidence": "live-verified",
+      "last_checked": "2026-11-16"
+    },
+    {
+      "id": "rates",
+      "title": "房型与价格条件",
+      "description": "逐条核对房型、入住容量、早餐、取消截止时间和优惠资格。",
+      "keywords": [
+        "房型",
+        "价格",
+        "报价",
+        "比价",
+        "早餐",
+        "取消",
+        "退款",
+        "rate",
+        "room",
+        "price"
+      ],
+      "file": "references/rates.md",
+      "evidence": "live-verified",
+      "last_checked": "2026-11-17"
+    },
+    {
+      "id": "reviews",
+      "title": "住客点评阅读",
+      "description": "打开完整点评面板，阅读差评、入住信息和酒店回复。",
+      "keywords": [
+        "点评",
+        "评论",
+        "差评",
+        "酒店回复",
+        "评价",
+        "review",
+        "rating"
+      ],
+      "file": "references/reviews.md",
+      "evidence": "live-verified",
+      "last_checked": "2026-11-17"
+    }
+  ]
+}

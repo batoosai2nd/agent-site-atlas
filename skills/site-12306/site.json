@@ -1,0 +1,57 @@
+{
+  "id": "12306",
+  "name": "中国铁路 12306",
+  "category": "旅行出行",
+  "entry_url": "https://www.12306.cn/index/index.html",
+  "domains": [
+    "www.12306.cn",
+    "12306.cn",
+    "kyfw.12306.cn"
+  ],
+  "aliases": [
+    "12306",
+    "铁路12306",
+    "中国铁路",
+    "火车票"
+  ],
+  "description": "12306 直达车次查询、准确车站选择、余票席别价格读取与中转入口排障。",
+  "context": "references/site.md",
+  "workflows": [
+    {
+      "id": "search",
+      "title": "直达车次与席别查询",
+      "description": "用当前可售日期查询车次，筛选准确出发站并读取席别价格与余票。",
+      "keywords": [
+        "查询",
+        "火车票",
+        "直达",
+        "车站",
+        "余票",
+        "价格",
+        "席别",
+        "高铁",
+        "search",
+        "train",
+        "fare"
+      ],
+      "file": "references/search.md",
+      "evidence": "live-verified",
+      "last_checked": "2026-11-17"
+    },
+    {
+      "id": "transfer",
+      "title": "中转换乘入口",
+      "description": "识别中转入口与独立查询字段，处理访问后回到个人中心的情况。",
+      "keywords": [
+        "中转",
+        "换乘",
+        "中转换乘",
+        "个人中心",
+        "transfer"
+      ],
+      "file": "references/transfer.md",
+      "evidence": "live-partial",
+      "last_checked": "2026-11-16"
+    }
+  ]
+}
