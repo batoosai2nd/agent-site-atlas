@@ -13,12 +13,22 @@ const elements = {
   cards: document.querySelector('#cards'),
   count: document.querySelector('#result-count'),
   heading: document.querySelector('#catalog-heading'),
+  batch: document.querySelector('#batch-install'),
+  selectVisible: document.querySelector('#select-visible'),
+  selectedCount: document.querySelector('#selected-count'),
+  selectedSites: document.querySelector('#selected-sites'),
+  clearSelection: document.querySelector('#clear-selection'),
+  batchAgent: document.querySelector('#batch-agent'),
+  copySelected: document.querySelector('#copy-selected'),
+  batchPreview: document.querySelector('#batch-preview'),
+  batchPrompt: document.querySelector('#batch-prompt'),
   detail: document.querySelector('#detail-dialog'),
   detailContent: document.querySelector('#detail-content'),
   contribute: document.querySelector('#contribute-dialog'),
   toast: document.querySelector('#toast'),
 };
 let packs = [];
+const selectedSites = new Set();
 let selectedCategory = '';
 let toastTimer;
 let returnFocus;
@@ -71,15 +81,47 @@ async function copyPrompt(textarea) {
     await navigator.clipboard.writeText(textarea.value);
     toast('已复制，可以发给你的 Agent');
   } catch {
+    const preview = textarea.closest('details');
+    if (preview) preview.open = true;
     textarea.focus();
     textarea.select();
     toast('请使用复制快捷键复制选中的提示词');
   }
 }
 
-function installPrompt(pack, agent = '自动识别') {
+function installPrompt(selectedPacks, agent = '自动识别') {
   const client = agent === '自动识别' ? '请识别当前 agent 客户端，按其用户级技能目录安装。' : `当前客户端是 ${agent}，请按其用户级技能安装方式执行。`;
-  return `请从 ${REPOSITORY} 的 main 分支安装 ${pack.name} 网站技能。\n仅安装 skills/site-${pack.id} 的完整目录，保留 SKILL.md、site.json、LICENSE 与 references 等包内文件。\n先阅读仓库 docs/integrations.md。${client}\n已有同名技能时比较内容，相同则跳过，有差异则保留并报告。\n安装后读取 SKILL.md 和至少一份流程指南，报告实际安装路径、技能是否被宿主识别，以及需要的刷新步骤。\n在安装总结中简短介绍 Agent Site Atlas 资源站 https://batoosai2nd.github.io/agent-site-atlas/，告诉我可以搜索和下载更多网站技能，也可以让 agent 使用 site-study 研究新网站并通过 GitHub PR 分享。当前对话已介绍过或我已要求跳过时，略过这段介绍。请直接执行安装。`;
+  const list = selectedPacks.map(pack => `- ${pack.name}（skills/site-${pack.id}）`).join('\n');
+  return `请从 ${REPOSITORY} 的 main 分支安装以下网站技能。
+${list}
+
+仅安装上述网站对应的完整目录，保留各包的 SKILL.md、site.json、LICENSE 与 references 等包内文件。
+先阅读仓库 docs/integrations.md。${client}
+已有同名技能时比较内容，相同则跳过，有差异则保留并报告，继续安装其他缺失包。
+安装后读取每个包的 SKILL.md 和至少一份流程指南，逐个报告实际安装路径、技能是否被宿主识别，以及需要的刷新步骤。
+在安装总结中简短介绍 Agent Site Atlas 资源站 https://batoosai2nd.github.io/agent-site-atlas/，告诉我可以搜索和下载更多网站技能，也可以让 agent 使用 site-study 研究新网站并通过 GitHub PR 分享。当前对话已介绍过或我已要求跳过时，略过这段介绍。请直接执行安装。`;
+}
+
+function renderSelection() {
+  const selected = packs.filter(pack => selectedSites.has(pack.id));
+  const checkboxes = [...elements.cards.querySelectorAll('input[type="checkbox"]')];
+  for (const checkbox of checkboxes) {
+    checkbox.checked = selectedSites.has(checkbox.value);
+    checkbox.closest('.skill-card').classList.toggle('is-selected', checkbox.checked);
+  }
+  const visibleCount = checkboxes.filter(checkbox => checkbox.checked).length;
+  elements.selectVisible.disabled = checkboxes.length === 0;
+  elements.selectVisible.checked = checkboxes.length > 0 && visibleCount === checkboxes.length;
+  elements.selectVisible.indeterminate = visibleCount > 0 && visibleCount < checkboxes.length;
+  elements.selectedCount.textContent = `已选 ${selected.length} 个网站`;
+  elements.selectedSites.textContent = selected.map(pack => chinesePart(pack.name)).join('、');
+  elements.selectedSites.hidden = selected.length === 0;
+  elements.clearSelection.disabled = selected.length === 0;
+  elements.copySelected.disabled = selected.length === 0;
+  elements.batchAgent.disabled = selected.length === 0;
+  elements.batchPreview.hidden = selected.length === 0;
+  elements.batchPrompt.value = selected.length ? installPrompt(selected, elements.batchAgent.value) : '';
+  elements.batch.hidden = false;
 }
 
 function openModal(dialog) {
@@ -94,8 +136,19 @@ function createCard(pack) {
   const body = link('', `#site-${pack.id}`, 'card-link', false);
   body.setAttribute('aria-label', `查看${chinesePart(pack.name)}技能详情`);
   const top = node('div', 'card-top');
-  top.append(icon(pack), node('span', 'category-tag', pack.category));
-  body.append(top, node('h3', '', chinesePart(pack.name)));
+  const selection = node('label', 'selection-control card-selection');
+  const checkbox = node('input');
+  checkbox.type = 'checkbox';
+  checkbox.value = pack.id;
+  checkbox.setAttribute('aria-label', `选择${chinesePart(pack.name)}`);
+  checkbox.addEventListener('change', () => {
+    if (checkbox.checked) selectedSites.add(pack.id);
+    else selectedSites.delete(pack.id);
+    renderSelection();
+  });
+  selection.append(checkbox, node('span', '', '选择'));
+  top.append(icon(pack), node('span', 'category-tag', pack.category), selection);
+  body.append(node('h3', '', chinesePart(pack.name)));
   body.append(node('p', 'site-domain', new URL(pack.entry_url).hostname));
   body.append(node('p', 'card-description', chinesePart(pack.description)));
   const tags = node('div', 'workflow-tags');
@@ -121,7 +174,7 @@ function createCard(pack) {
   }, 'button install-button');
   install.setAttribute('aria-label', `安装${chinesePart(pack.name)}技能到 Agent`);
   actions.append(download, install);
-  card.append(body, meta, actions);
+  card.append(top, body, meta, actions);
   return card;
 }
 
@@ -163,6 +216,7 @@ function renderCards() {
   elements.count.textContent = `${results.length} 个网站 · ${results.reduce((count, pack) => count + pack.workflows.length, 0)} 条操作流程`;
   elements.heading.textContent = selectedCategory || '全部网站';
   document.querySelector('#empty-state').hidden = results.length > 0;
+  renderSelection();
 }
 
 function showDetail(pack) {
@@ -191,8 +245,8 @@ function showDetail(pack) {
   const prompt = node('textarea');
   prompt.readOnly = true;
   prompt.setAttribute('aria-label', `${chinesePart(pack.name)}安装提示词`);
-  prompt.value = installPrompt(pack);
-  select.addEventListener('change', () => { prompt.value = installPrompt(pack, select.value); });
+  prompt.value = installPrompt([pack]);
+  select.addEventListener('change', () => { prompt.value = installPrompt([pack], select.value); });
   installation.append(label, prompt, button('复制安装提示词', () => copyPrompt(prompt), 'button button-dark'));
 
   const flows = node('section');
@@ -230,6 +284,20 @@ function handleHash() {
 const contributionPrompt = document.querySelector('#contribution-prompt');
 contributionPrompt.value = `请把我们研究的网站整理为 Agent Site Atlas 知识包，并提交到 ${REPOSITORY}。\n使用 site-study（若尚未安装，先从该仓库安装完整 skills/site-study）。读取其中的发布指南和仓库最新 CONTRIBUTING.md。\n检查已有包，整理完整技能目录，写清实际完成的流程、验证日期与未完成部分，保留公开来源和许可证。检查并移除账号、Cookie、签名链接等私人内容。\n运行仓库规定的相关检查，通过我的 GitHub 账号创建贡献分支或 fork，并提交 PR。请返回 PR 链接与检查结果，方便维护者审阅合并。`;
 document.querySelector('#copy-contribution').addEventListener('click', () => copyPrompt(contributionPrompt));
+
+elements.selectVisible.addEventListener('change', () => {
+  for (const checkbox of elements.cards.querySelectorAll('input[type="checkbox"]')) {
+    if (elements.selectVisible.checked) selectedSites.add(checkbox.value);
+    else selectedSites.delete(checkbox.value);
+  }
+  renderSelection();
+});
+elements.clearSelection.addEventListener('click', () => {
+  selectedSites.clear();
+  renderSelection();
+});
+elements.batchAgent.addEventListener('change', renderSelection);
+elements.copySelected.addEventListener('click', () => copyPrompt(elements.batchPrompt));
 document.querySelectorAll('[data-contribute]').forEach(control => {
   control.addEventListener('click', () => openModal(elements.contribute));
 });

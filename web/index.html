@@ -73,6 +73,20 @@
             <div><h2 id="catalog-heading">全部网站</h2><p id="result-count" role="status">正在加载技能目录…</p></div>
             <label class="sort-control"><span>排序</span><select id="sort"><option value="recent">最近核查</option><option value="name">网站名称</option><option value="workflows">流程数量</option></select></label>
           </div>
+          <section id="batch-install" class="batch-install" aria-label="批量安装网站技能" hidden>
+            <div class="batch-controls">
+              <label class="selection-control"><input id="select-visible" type="checkbox">全选当前结果</label>
+              <span id="selected-count" role="status">已选 0 个网站</span>
+              <button id="clear-selection" class="text-button" disabled>清空</button>
+              <label class="batch-client">客户端<select id="batch-agent"><option>自动识别</option><option>Codex</option><option>Claude Code</option><option>DeepSeek Harness</option><option>WorkBuddy</option></select></label>
+              <button id="copy-selected" class="button button-dark" disabled>复制所选安装提示词</button>
+            </div>
+            <p id="selected-sites" class="selected-sites" hidden></p>
+            <details id="batch-preview" class="batch-preview" hidden>
+              <summary>查看安装提示词</summary>
+              <textarea id="batch-prompt" readonly aria-label="所选网站的批量安装提示词"></textarea>
+            </details>
+          </section>
           <div id="cards" class="card-grid" aria-label="网站技能列表"></div>
           <div id="empty-state" class="empty-state" hidden><span aria-hidden="true">⌕</span><h3>还没有匹配的网站技能</h3><p>试试网站名称、域名或其他任务词，也可以贡献新的研究成果。</p><button id="reset-filters" class="button button-light">清除筛选</button></div>
           <div id="load-error" class="empty-state" hidden><h3>技能目录暂时无法加载</h3><p>请刷新页面，或从 GitHub 仓库浏览和安装。</p><a class="button button-light" href="https://github.com/batoosai2nd/agent-site-atlas/tree/main/skills">前往 GitHub</a></div>
