@@ -1,0 +1,96 @@
+{
+  "id": "uts-canvas",
+  "name": "UTS Canvas · 悉尼科技大学",
+  "category": "教育学习",
+  "description": "悉尼科技大学学生端的课程公告、作业时间核对、模块课件与课程离线导出。",
+  "entry_url": "https://canvas.uts.edu.au/",
+  "domains": [
+    "canvas.uts.edu.au"
+  ],
+  "aliases": [
+    "UTS Canvas",
+    "Canvas at UTS",
+    "悉尼科技大学 Canvas",
+    "University of Technology Sydney Canvas"
+  ],
+  "context": "references/site.md",
+  "workflows": [
+    {
+      "id": "announcements",
+      "title": "Read course announcements / 查课程公告",
+      "description": "读课程公告列表和正文，区分发布日期、活动日期及考核指引。",
+      "keywords": [
+        "公告",
+        "课程更新",
+        "通知",
+        "公告日期",
+        "announcements",
+        "posted on",
+        "recent announcements"
+      ],
+      "file": "references/announcements.md",
+      "evidence": "live-verified",
+      "last_checked": "2026-11-16"
+    },
+    {
+      "id": "assessments",
+      "title": "Check assignments and dates / 核对考核安排",
+      "description": "查作业详情、截止与开放窗口，处理锁定及时间歧义。",
+      "keywords": [
+        "作业",
+        "考核",
+        "截止",
+        "考试",
+        "锁定",
+        "开放窗口",
+        "assignment",
+        "due",
+        "deadline",
+        "quiz",
+        "availability"
+      ],
+      "file": "references/assessments.md",
+      "evidence": "live-verified",
+      "last_checked": "2026-11-16"
+    },
+    {
+      "id": "materials",
+      "title": "Download a module file / 下载和核对课件",
+      "description": "从模块下载单个文件，核对版本并保留本地批注。",
+      "keywords": [
+        "课件",
+        "讲义",
+        "单个文件",
+        "批注",
+        "更新课件",
+        "modules",
+        "lecture",
+        "PDF",
+        "module file",
+        "version"
+      ],
+      "file": "references/materials.md",
+      "evidence": "live-verified",
+      "last_checked": "2026-11-16"
+    },
+    {
+      "id": "offline-export",
+      "title": "Verify an offline course export / 验收课程离线包",
+      "description": "从模块的导出历史取回 ZIP，定位包内文件并复核离线覆盖。",
+      "keywords": [
+        "离线包",
+        "课程导出",
+        "整课下载",
+        "附件缺失",
+        "导出历史",
+        "ZIP",
+        "offline",
+        "export course content",
+        "exported package history"
+      ],
+      "file": "references/offline-export.md",
+      "evidence": "live-verified",
+      "last_checked": "2026-11-16"
+    }
+  ]
+}
