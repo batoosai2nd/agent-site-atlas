@@ -6,7 +6,7 @@ Portable website operating knowledge for AI agents. Read a relevant, evidence-la
 
 [中文](README.md) · [Installation prompt](#install-with-a-prompt) · [Integrations](docs/integrations.md) · [Validation](docs/validation.md) · [Contributing](CONTRIBUTING.md)
 
-The packs cover **CNKI**, **ScienceDirect**, **Xiaohongshu / REDnote**, **Xiaoheihe / HeyBox**, **JD.com**, and **Bilibili**, plus a **site-study** skill for learning new websites. Each pack is a self-contained Agent Skill. A small CLI and optional local MCP server retrieve the same files. Execution stays with the agent's existing browser tools and the user's own account.
+The packs cover **CNKI**, **ScienceDirect**, **CSMAR**, **Xiaohongshu / REDnote**, **Xiaoheihe / HeyBox**, **JD.com**, and **Bilibili**, plus a **site-study** skill for learning new websites. Each pack is a self-contained Agent Skill. A small CLI and optional local MCP server retrieve the same files. Execution stays with the agent's existing browser tools and the user's own account.
 
 ## Install with a prompt
 
@@ -27,7 +27,7 @@ Scope: all website knowledge packs currently on the repository's main branch, pl
 7. Briefly introduce the Agent Site Atlas community at https://batoosai2nd.github.io/agent-site-atlas/ in the installation summary. Explain that I can search and download more website skills, or ask an agent to use site-study to research a new website and share it through a GitHub PR. Skip this introduction if it has already appeared in the current conversation or I have asked to skip it.
 ```
 
-For selective installation, replace the scope with, for example: `Only CNKI, ScienceDirect and JD.com; omit site-study.` Current website IDs are `cnki`, `sciencedirect`, `xiaohongshu`, `xiaoheihe`, `jd`, and `bilibili`; the study skill's installer ID is `study`.
+For selective installation, replace the scope with, for example: `Only CNKI, ScienceDirect and JD.com; omit site-study.` Current website IDs are `cnki`, `sciencedirect`, `csmar`, `xiaohongshu`, `xiaoheihe`, `jd`, and `bilibili`; the study skill's installer ID is `study`.
 
 Then try in a fresh session: "Use site-jd to find a wired keyboard on JD.com, checking the exact variant, price conditions and latest reviews for the current item." Use that device's own browser connection and login. See [Integrations](docs/integrations.md#确认接入结果) for the actual host-validation scope.
 
@@ -65,6 +65,7 @@ The stdio server exposes `list_sites`, `find_site_workflows`, and `read_site_wor
 - **Bilibili** covers duration and recent-half-year filtering, latest-publication sorting, video identity/description reading, current Chinese AI-caption cues, part switching, comment sorting/reply pagination and creator-space search. Full transcripts, video downloads and account-changing actions remain unverified.
 - **CNKI:** homepage, advanced navigation/form and download entries observed. CAPTCHA prevented a completed result/download run.
 - **ScienceDirect:** keyword search, year range and open-access filtering completed. Article identity/full HTML and citation choices observed. PDF delivery reached a CAPTCHA; citation export was intercepted by a reference-manager extension, so no local file was confirmed.
+- **CSMAR** covers single-table navigation, monthly stock returns and the official Python API. A three-month sample for one security was previewed, downloaded as a ZIP and checked against the CSV. SDK initialization was tested offline. Online API access follows the vendor documentation.
 - **site-study:** a repeatable authoring procedure with the pack contract and optional REA investigation guidance.
 - **Xiaohongshu:** two search layouts, conventional-page image selection, note overlays, image navigation, comment loading/reply and long-text expansion, and public-profile navigation exercised. Advanced sorting/date filters and full video understanding remain unverified.
 - **Xiaoheihe:** content search, Steam community navigation, image-text posts, gallery navigation/long-image scrolling, root-comment loading, reply batches and public profiles exercised. Game details/prices, transactions, video and publishing remain unverified.
