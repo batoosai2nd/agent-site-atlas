@@ -19,3 +19,12 @@
 | `uts-library.png` | [UTS Library](https://www.lib.uts.edu.au/themes/utslib2020/assets/icons/favicon-96x96.png) |
 | `xiaoheihe.png` | [小黑盒](https://cdn.max-c.com/heybox/logo/app_251.png) |
 | `xiaohongshu.ico` | [小红书](https://fe-video-qc.xhscdn.com/fe-platform/ed8fe781ce9e16c1bfac2cd962f0721edabe2e49.ico) |
+
+2026-11-18 补充以下网站的原始标签页图标。
+
+| 文件 | 图标来源 |
+| --- | --- |
+| `shu-learning.ico` | [上海大学教学平台](https://learning.shu.edu.cn/favicon.ico) |
+| `zhizhen.ico` | [超星发现](https://ss.zhizhen.com/favicon.ico) |
+
+上海大学图书馆首页未声明 favicon，标准路径返回 404，目录使用网站名称缩写。

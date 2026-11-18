@@ -1,0 +1,71 @@
+{
+  "id": "zhizhen",
+  "name": "超星发现",
+  "category": "学术研究",
+  "description": "超星发现主题与 DOI 检索、馆藏分面、论文 PDF 获取及引用题录导出。",
+  "entry_url": "https://www.zhizhen.com/",
+  "domains": [
+    "www.zhizhen.com",
+    "zhizhen.com"
+  ],
+  "aliases": [
+    "超星发现",
+    "超星发现系统",
+    "发现系统",
+    "Chaoxing Discovery",
+    "Zhizhen"
+  ],
+  "context": "references/site.md",
+  "workflows": [
+    {
+      "id": "search",
+      "title": "检索筛选与 DOI 定位",
+      "description": "执行主题、期刊类型、馆藏电子资源和 DOI 高级检索，识别重复题录。",
+      "keywords": [
+        "论文",
+        "检索",
+        "期刊",
+        "馆藏",
+        "筛选",
+        "高级检索",
+        "DOI",
+        "去重"
+      ],
+      "file": "references/search.md",
+      "evidence": "live-verified",
+      "last_checked": "2026-11-18"
+    },
+    {
+      "id": "fulltext",
+      "title": "论文详情与 PDF 下载",
+      "description": "核对题录和获取来源，保存可访问 PDF 并检查文件。",
+      "keywords": [
+        "全文",
+        "下载",
+        "PDF",
+        "文献传递",
+        "获取途径"
+      ],
+      "file": "references/fulltext.md",
+      "evidence": "live-verified",
+      "last_checked": "2026-11-18"
+    },
+    {
+      "id": "citations",
+      "title": "引用与题录导出",
+      "description": "读取引用格式并验证 BibTeX 文件，记录本次人工下载协助与字段限制。",
+      "keywords": [
+        "引用",
+        "引文",
+        "题录",
+        "导出",
+        "BibTeX",
+        "EndNote",
+        "References.txt"
+      ],
+      "file": "references/citations.md",
+      "evidence": "live-verified",
+      "last_checked": "2026-11-18"
+    }
+  ]
+}
