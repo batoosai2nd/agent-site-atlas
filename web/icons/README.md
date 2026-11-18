@@ -1,6 +1,6 @@
-# 网站标签页图标
+# 网站图标
 
-这些图标于 2026-11-17 从各网站的 favicon 声明或标准 `/favicon.ico` 路径取得，保留原始格式。构建时按文件名对应的网站 ID 加入目录，卡片和详情使用同一图标。
+图标取自网站的 favicon、官方标识或用户提供的网页截图，具体来源见下表。构建时按文件名对应的网站 ID 加入目录，卡片和详情使用同一图标。
 
 网站名称与图标的权利归各自权利人所有，用于标识技能适用的网站。
 
@@ -20,11 +20,10 @@
 | `xiaoheihe.png` | [小黑盒](https://cdn.max-c.com/heybox/logo/app_251.png) |
 | `xiaohongshu.ico` | [小红书](https://fe-video-qc.xhscdn.com/fe-platform/ed8fe781ce9e16c1bfac2cd962f0721edabe2e49.ico) |
 
-2026-11-18 补充以下网站的原始标签页图标。
+以下图标于 2026-11-18 核对。
 
 | 文件 | 图标来源 |
 | --- | --- |
-| `shu-learning.ico` | [上海大学教学平台](https://learning.shu.edu.cn/favicon.ico) |
+| `shu-learning.svg` | [上海大学官网标识](https://www.shu.edu.cn/images/logo.svg)，以 SVG 视区提取左侧校徽，保留原始路径，配蓝色底以显示白色校徽 |
+| `shu-library.png` | 用户提供的[上海大学图书馆](https://lib.shu.edu.cn/)网页截图，裁取左侧圆形馆徽 |
 | `zhizhen.ico` | [超星发现](https://ss.zhizhen.com/favicon.ico) |
-
-上海大学图书馆首页未声明 favicon，标准路径返回 404，目录使用网站名称缩写。
