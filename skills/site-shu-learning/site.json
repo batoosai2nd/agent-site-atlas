@@ -1,0 +1,108 @@
+{
+  "id": "shu-learning",
+  "name": "上海大学学习空间",
+  "category": "教育学习",
+  "description": "上海大学学生课程定位、课程资料下载、通知阅读、章节导航及作业考试状态核对。",
+  "entry_url": "https://learning.shu.edu.cn/portal",
+  "domains": [
+    "learning.shu.edu.cn",
+    "imooc.shu.edu.cn",
+    "mooc2-ans.shu.edu.cn",
+    "mooc1.shu.edu.cn",
+    "mobilelearn.shu.edu.cn",
+    "notice.shu.edu.cn",
+    "notice.chaoxing.com"
+  ],
+  "aliases": [
+    "上海大学学习空间",
+    "上大学习空间",
+    "上海大学学习通",
+    "上海大学泛雅",
+    "Shanghai University learning space"
+  ],
+  "context": "references/site.md",
+  "workflows": [
+    {
+      "id": "courses",
+      "title": "课程定位与学期筛选",
+      "description": "从门户进入学习空间，按学期和课程名称查找学生课程。",
+      "keywords": [
+        "课程",
+        "学期",
+        "历史课程",
+        "课程编号",
+        "学习空间",
+        "course"
+      ],
+      "file": "references/courses.md",
+      "evidence": "live-verified",
+      "last_checked": "2026-11-18"
+    },
+    {
+      "id": "materials",
+      "title": "课程资料预览与下载",
+      "description": "从资料列表预览单个文档，通过预览下载入口取得原文件。",
+      "keywords": [
+        "课件",
+        "资料",
+        "大纲",
+        "讲义",
+        "下载",
+        "DOCX",
+        "PDF"
+      ],
+      "file": "references/materials.md",
+      "evidence": "live-verified",
+      "last_checked": "2026-11-18"
+    },
+    {
+      "id": "notices",
+      "title": "课程通知与收件箱",
+      "description": "从任务列表阅读课程通知正文，并识别统一收件箱入口。",
+      "keywords": [
+        "通知",
+        "公告",
+        "收件箱",
+        "任务",
+        "安排",
+        "notice"
+      ],
+      "file": "references/notices.md",
+      "evidence": "live-verified",
+      "last_checked": "2026-11-18"
+    },
+    {
+      "id": "assessments",
+      "title": "作业与考试状态",
+      "description": "核对列表筛选、空状态、已完成考试和手机应用限制，查找安排来源。",
+      "keywords": [
+        "作业",
+        "考试",
+        "测验",
+        "截止",
+        "考核",
+        "时间",
+        "手机APP"
+      ],
+      "file": "references/assessments.md",
+      "evidence": "live-partial",
+      "last_checked": "2026-11-18"
+    },
+    {
+      "id": "chapters",
+      "title": "章节目录与小节定位",
+      "description": "从目录进入目标小节，识别章节详情正文和空内容状态。",
+      "keywords": [
+        "章节",
+        "小节",
+        "目录",
+        "正文",
+        "任务点",
+        "学习内容"
+      ],
+      "file": "references/chapters.md",
+      "evidence": "live-verified",
+      "last_checked": "2026-11-18"
+    }
+  ]
+}

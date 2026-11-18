@@ -1,0 +1,87 @@
+{
+  "id": "shu-library",
+  "name": "上海大学图书馆",
+  "category": "学术研究",
+  "description": "上海大学馆藏书目、数据库机构入口、校外访问与论文全文获取路径。",
+  "entry_url": "https://lib.shu.edu.cn/index.htm",
+  "domains": [
+    "lib.shu.edu.cn",
+    "findshu.libsp.cn"
+  ],
+  "aliases": [
+    "上海大学图书馆",
+    "上大图书馆",
+    "SHU Library",
+    "Shanghai University Library"
+  ],
+  "context": "references/site.md",
+  "workflows": [
+    {
+      "id": "discovery-download",
+      "title": "资源发现与论文下载",
+      "description": "从图书馆进入超星发现，核对论文并下载可访问全文。",
+      "keywords": [
+        "论文",
+        "检索",
+        "资源发现",
+        "全文",
+        "下载",
+        "PDF",
+        "DOI"
+      ],
+      "file": "references/discovery-download.md",
+      "evidence": "live-verified",
+      "last_checked": "2026-11-18"
+    },
+    {
+      "id": "catalog",
+      "title": "书目与单册馆藏",
+      "description": "查找图书版本，读取校区、馆藏地、索书号与可借状态。",
+      "keywords": [
+        "图书",
+        "馆藏",
+        "书目",
+        "ISBN",
+        "索书号",
+        "可借",
+        "在架",
+        "校区"
+      ],
+      "file": "references/catalog.md",
+      "evidence": "live-verified",
+      "last_checked": "2026-11-18"
+    },
+    {
+      "id": "databases",
+      "title": "数据库导航与机构入口",
+      "description": "按数据库名称读取说明并定位 CARSI 访问方式，记录出版商访问限制。",
+      "keywords": [
+        "数据库",
+        "CARSI",
+        "ScienceDirect",
+        "机构访问",
+        "数据库导航"
+      ],
+      "file": "references/databases.md",
+      "evidence": "live-partial",
+      "last_checked": "2026-11-18"
+    },
+    {
+      "id": "access-delivery",
+      "title": "校外访问与文献传递",
+      "description": "依据图书馆官方说明定位 CARSI、VPN、馆际互借和文献传递申请路径。",
+      "keywords": [
+        "校外访问",
+        "VPN",
+        "CARSI",
+        "馆际互借",
+        "文献传递",
+        "CALIS",
+        "CASHL"
+      ],
+      "file": "references/access-delivery.md",
+      "evidence": "documented",
+      "last_checked": "2026-11-18"
+    }
+  ]
+}
